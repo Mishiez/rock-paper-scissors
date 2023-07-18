@@ -45,5 +45,31 @@ function playRound(playerSelection,computerSelection){
     return "Wrong Input! Try again";
   }
 }
+//console.log(playRound(getPlayerChoice(),getComputerChoice()));
 
-console.log(playRound(getPlayerChoice(),getComputerChoice()));
+function game(){
+  let player=0;
+    let computer=0;
+  for (let i=0;i<=4;i++){
+    let result=playRound(getPlayerChoice(),getComputerChoice());
+    console.log(result)
+    if(result.includes("win")){
+      player++;
+    }
+    else if(result.includes("lose")){
+      computer++;
+    }
+  }
+
+  if(player>computer){
+    console.log("Hurray! Overall youa re the winner");
+  }
+  else if(computer>player){
+    console.log("Try again. Game over")
+  }
+  else{
+    console.log("It's a tie");
+  }
+}
+game();
+
